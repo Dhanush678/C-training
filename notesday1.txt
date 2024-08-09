@@ -1,0 +1,446 @@
+sizeof(short) > =2
+
+sizeof(long)  > = 4
+
+sizeof(short) <= sizeof(int) <= sizeof( long) <=
+                                 sizeof( long long)
+
+ILP32 systems
+   int, long and pointer all are 32 bits
+
+ILP32LL64    systems
+   integer, long and pointer all are 32 bits
+   long long is 64 bits
+
+LP64
+   long and pointer are 64 bits
+   int at 32 bits
+
+LPLL64
+   long, pointer and long long  are 64 bits
+   int at 32 bits
+
+
+sizeof(short) == sizeof( unsigned short) 
+sizeof(int  ) == sizeof( unsigned int  ) 
+sizeof(long ) == sizeof( unsigned long ) 
+sizeof(long long ) == sizeof( unsigned long long ) 
+sizeof(short) == sizeof( unsigned short) 
+
+
+
+Signed Char:
+----------
+
+  0111 1111             127
+.
+.
+.
+.
+.
+.
+  0000  0010            2
+  0000  0001            1
+  0000  0000            0
+
+  1111 1111     -128     127     -1     
+.
+.
+.
+.
+  1000 0010     -128     2     -126     
+  1000 0001     -128     1     -127     
+  1000 0000     -128     0     -128     
+
+
+-1 * Leftmostbit * pow(2,numofbits -1)
+
+UnSigned Char:
+------------
+
+  1111 1111     128     127   255 
+.
+.
+.
+.
+  1000 0010     128     2     130     
+  1000 0001     128     1     129 
+  1000 0000     128     0     128     
+
+  0111 1111             127
+.
+.
+.
+.
+.
+.
+  0000  0010            2
+  0000  0001            1
+  0000  0000            0
+
+
+
+-1 * Leftmostbit * pow(2,numofbits -1)
+---------------------------------------------------------------
+char c = 'a'; 
+     c = 'b'; 
+EOF   -1
+
+signed   char range    -128 to 127
+unsigned char range     0   to 255
+
+
+          Text Files 
+    0    --------   127
+           ASCII
+
+
+
+    0    --------   127    ---------  255
+                            E ASCII
+
+                  Binary files
+                       
+
+Three types are char:
+
+signed char 
+unsigned char 
+
+char 
+        is signed or not is implementation/compiler dependent 
+
+   
+-------------------------------------------------------
+
+
+  int i = 340;  
+
+  int i = 0x10; ----> 16   %d 
+  int i = 010;  --->    8  %d
+
+
+   int i = 0X30UL; 
+                   48   unsigned long 
+
+
+-------------------------------------------------
+
+Base is determined by prefixes
+Prefixs:   
+   0X 0x   hexadecimal
+                          0x345
+                         0X00000005F
+
+     0     octal 
+                                  010 
+                                  034
+
+     1-9   decial num the digit is count as 
+           part of the vaule 
+                                  10 
+                                  34
+
+
+		%d		  sizeof( 34)    
+		%d                  sizeof( 34L)
+
+Types are determnined by suffixes
+                  int   -----              10 
+                  int   ------             34
+
+     unsigned              int                10U 
+     unsigned              int                34u
+
+      long             int                10L 
+      long             int                34l
+
+      unsigned long long                   10ULL 
+      long long                             34ll
+----------------------------------------------------------------------
+
+   char c = 'a' ;  
+
+------------------------------------------------------------------------
+
+   float f = 34.00 ; 
+  
+             34.00f
+             34.00F
+  
+             34.00l
+             34.00L
+----------------------------------------------------------------------------
+    f()
+    {  
+    char *cp = "hello"
+
+     strcpy(cp, "worldabc"); 
+    } 
+
+   main()
+   { char * cp1 = "world";
+     char * cp2 = "world";
+      f(); 
+   }   
+
+
+Double quoted string get memory allocated in const strings 
+region. 
+
+Will be replaced by a pointer to the first letter. 
+
+
+printf("hello world");
+
+
+will actually get a pointer to h as its argument.
+
+
+------------------------------------------------------------
+
+0   -----> False 
+-1  -----> True 
+1  -----> True 
+10  -----> True 
+-10  -----> True 
+-100000   -----> True 
+
+if ( expr )    statement ; 
+
+if ( expr )    
+{ 
+statements ; 
+} 
+else 
+{ 
+ /* else part */ 
+} 
+if( 1)   printf ("hello"); 
+if( 0)   printf ("hello"); 
+if( -1)   printf ("hello"); 
+if( 10)   printf ("hello"); 
+if( -101)   printf ("hello"); 
+if ( - 0  )  printf("hello");    ; 
+
+printf("hello"); 
+
+
+_____________________________
+ 
+int i = 10; 
+int p; 
+
+p  =    ( i + 4 ) ; // 14 
+printf("%d\n", p);
+
+p  =    ( i = 25.76 ) ; //  25
+printf("%d\n", p);
+
+
+_____________________________
+ 
+int i =10 ;
+
+ if ( i =  -11)    
+  printf("hello");
+ else 
+  printf("world ");
+
+  j = 10; 
+  -------
+      10 
+
+
+  i = j + 30 ; 
+  -------------
+      40 
+
+      i - j 
+      
+_____________________________
+   
+3000
+ 
+ int  i=234;  
+ if ( i = 0 )          // assignment...
+  printf("hello"); 
+ else 
+  printf("world ");
+_____________________________
+ 
+
+
+
+
+ if ( i==0)
+  printf("hello");
+ else 
+  printf("world ");
+
+int i = 10 ;   Initialization. i is initialized 
+
+ 
+int i =10, j=11; 
+
+if ( 0)  ;
+printf("hello"); 
+
+if ( 0)  printf("hello"); 
+
+if(0)
+   	if(j)	  				
+		printf("hello"); 
+	else 	
+		printf("world ");
+
+if(0)
+if(j)
+printf("hello"); 
+else 
+printf("world ");
+
+
+if ( 0) printf( "hello"); printf("world \n"); 
+
+if ( 0) { printf( "hello");printf("world \n");  }
+------------------------------------------------------------------------
+
+ switch(3) 
+{
+int i ; 
+ 
+case 2:  printf("hello %d ", i); break; 
+    int j=  f1(); 
+
+case 3:    printf("world %d", j ); break; 
+    int k; 
+
+case 'a' : printf ("char "); break ; 
+
+default: printf("default");
+} 
+-------------------------------------------------------------
+switch(expr)
+case 10: printf ("hello\n");
+------------------------------------------------------------------
+switch(expr)
+case 10:{
+         int i;  
+
+         } 
+------------------------------------------------------------------
+switch(expr)
+default : printf ("hello\n");
+----------------------------------------------------------------
+
+
+while()  //ERROR 
+{
+
+} 
+
+while(1)  //infinite
+{
+
+} 
+
+for(;;)  //Correct....   infinite 
+
+for(exp1;       ;  exp3)   // infinite
+{
+}    
+----------------------------------------------------
+
+for( int i =10; i<20;i++)
+{
+
+i;
+
+} 
+
+
+i;  //ERROR
+
+
+for( int i =10; i<20;i++)
+{
+
+i;
+
+} 
+---------------------------------------------------------------------
+int main(int argc, char * argv[])
+{
+	char buff[10];
+
+	char * cp;
+
+	gets(cp);  // Wrong way of using gets.....
+
+	gets(buff) ;   // Right way of passing argument....
+
+
+	fgets(buff, sizeof(buff), stdin)
+
+		return 0;
+} 
+
+-------------------------------------------------------------------
+
+
+
+
+
+
+int m1, m2, m3;   
+--------------------------------------
+
+
+typedef     int          Marks; 
+
+typedef     int          Marks;   New name exiting type int
+keyword  exiting type    New name  
+
+typedef int  Marks=10;  
+
+// Not an object. can't initialize....
+
+Marks  m1, m2, m3= 20; 
+
+
+typedef int  Marks1,Marks2, Marks3;  
+
+// New names for exiting type int
+
+typedef Marks New_marks; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
